@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A daily dose of wisdom and inspiration. Discover, favorite, and reflect on meaningful quotes.">
+  <title>Quote of the Day</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-icon" aria-hidden="true">✦</span>
+      <h1 class="brand-title">Quote of the Day</h1>
+    </div>
+    <div class="header-actions">
+      <button id="view-favorites-btn" class="btn btn-secondary fav-counter-btn" aria-label="Open saved favorites list">
+        <svg class="icon icon-heart-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <span>Favorites</span>
+        <span id="favorites-badge" class="badge" aria-label="0 saved quotes">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="card-wrapper">
+      <article id="quote-card" class="quote-card" aria-live="polite">
+        <!-- Decorative quote marks -->
+        <div class="quote-ornament" aria-hidden="true">“</div>
+
+        <div class="quote-content">
+          <div class="category-pill-wrapper">
+            <span id="quote-category" class="category-pill">Wisdom</span>
+          </div>
+
+          <blockquote id="quote-text" class="quote-text">
+            Loading inspiring words for your day...
+          </blockquote>
+
+          <div class="quote-footer">
+            <div class="author-block">
+              <span class="author-dash" aria-hidden="true">—</span>
+              <cite id="quote-author" class="quote-author">Loading author...</cite>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-actions">
+          <div class="utility-actions">
+            <button id="favorite-btn" class="btn-icon" aria-pressed="false" aria-label="Add quote to favorites" title="Favorite (Press F)">
+              <svg class="icon heart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </button>
+
+            <button id="copy-btn" class="btn-icon" aria-label="Copy quote to clipboard" title="Copy to clipboard">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+
+            <button id="share-btn" class="btn-icon" aria-label="Share this quote" title="Share quote">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="primary-actions">
+            <button id="new-quote-btn" class="btn btn-primary" title="Show new quote (Press Space or N)">
+              <svg class="icon icon-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+              <span>New Quote</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Keyboard navigation shortcut legend -->
+    <aside class="shortcuts-legend" aria-label="Keyboard shortcuts">
+      <div class="shortcut-item">
+        <kbd>Space</kbd> or <kbd>N</kbd> <span>New quote</span>
+      </div>
+      <div class="shortcut-divider" aria-hidden="true">•</div>
+      <div class="shortcut-item">
+        <kbd>F</kbd> <span>Toggle favorite</span>
+      </div>
+      <div class="shortcut-divider" aria-hidden="true">•</div>
+      <div class="shortcut-item">
+        <kbd>Esc</kbd> <span>Close dialogs</span>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Favorites Drawer / Slide-over Modal -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+  <aside id="favorites-drawer" class="favorites-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-heading" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <h2 id="drawer-heading" class="drawer-title">Favorited Quotes</h2>
+        <span id="drawer-count-badge" class="badge">0</span>
+      </div>
+      <button id="close-drawer-btn" class="btn-icon" aria-label="Close favorites panel">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div id="favorites-list" class="favorites-list" tabindex="0" aria-label="List of your favorited quotes">
+      <!-- Populated dynamically via JavaScript -->
+    </div>
+  </aside>
+
+  <!-- Live Toast Notifications Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Main JavaScript Application Module -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
