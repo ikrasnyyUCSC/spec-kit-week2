@@ -97,5 +97,4 @@ All acceptance criteria defined across the constitution, specification, and plan
 ---
 
 ## 4. What You Learned (Reflection)
-
-For a self-contained, client-only web application, Spec-Driven Development initially felt like noticeable overhead—writing a formal constitution, multi-page specification, architectural blueprint, and task breakdown before writing any HTML or JavaScript created a delay before seeing visual feedback. However, that upfront investment paid off immensely during implementation and convergence: defining explicit contracts for storage resilience, non-repetition logic, and state management resulted in a clean, modular architecture that passed all 18 automated unit tests on the very first execution. By clarifying failure modes and edge cases during the specification phase, we completely avoided messy mid-project refactoring, incognito storage bugs, and DOM-storage coupling.
+Writing specs, plans, and tasks before touching any code felt like excessive ceremony for a simple static web app. That upfront planning paid off immediately during implementation, as having clear contracts for state and storage prevented incognito browser bugs and messy refactoring. Specifying edge cases early turned what would have been tedious debugging into an effortless convergence where all 18 unit tests passed on the first run.
